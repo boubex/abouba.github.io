@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+<h1>
+  News
+</h1>
+<hr>
+
+<ul>
+  {% for post in site.categories.News limit:4 %}
+  <li>
+
+      <a class= "div_link" href="{{ post.url | prepend: site.github.url }}">
+        <div class="highlight" style="background-image: url('{{site.github.url}}/img/{{post.image}}')">
+
+   <h1 class="div_content">{{post.title}}</h1>
+          <p>{{post.meta}}</p>
+
+    </div>
+    </a>
+
+<hr/>
+
+
+  </li>
+  {% endfor %}
+</ul>

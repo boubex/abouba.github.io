@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<div class="post-container">
+
+<header class="img-responsive post-img" style="background-image: url('{{site.github.url}}/img/{{page.image}}')">
+<h1>{{page.title}}</h1>
+{% if page.subtitle %}
+
+<h2 class="subheading"><em>{{ page.subtitle }}</em></h2>
+{% endif %}
+<br/>
+
+</header>
+<span class="meta">Posted by {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} on {{ page.date | date: "%B %-d, %Y" }}</span>
+
+{{content}}
+
+<hr>
+
+</div>

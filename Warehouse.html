@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<h1> Warehouse </h1>
+<hr>
+
+<header class="img-responsive sign" style="background-image: url('{{site.github.url}}/img/swirl_pattern.png')">
+<div class="notice" style=
+'background-color:purple; color:#fff; width:40%; padding: 20px; margin-right:auto; margin-left:auto; border-radius: 2%' ><h1>COMING SOON</h1></div>
+<h3>Purchase recently reviewed products</h3>
+
+</header>
+
+<ul>
+  {% for post in site.categories.Warehouse limit:4 %}
+  <li>
+  <a href="{{ post.url | prepend: site.github.url }}">{{post.title}}</a>
+  <p>{{post.meta}}</p>
+  </li>
+  {% endfor %}
+</ul>

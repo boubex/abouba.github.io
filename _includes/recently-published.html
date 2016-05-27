@@ -1,0 +1,37 @@
+<h1 class="site_name" style ="font-family: Ubuntu; font-weight: 800;
+letter-spacing: 1px"><a style="color: #ff0000;" href="{{site.github.url}}/index.html" >Tech-Plug</a></h1>
+
+<h3>Recently Published</h3>
+<hr style="width: 50%; padding:0; margin:0">
+
+<ol class="criteria">
+<li><h5>News</h5></li>
+{% for post in site.categories.News limit:2 %}
+<ul>
+<li>
+<a href="{{post.url | prepend: site.github.url}}">{{post.title}}</a>
+</li>
+</ul>
+
+{% endfor %}
+
+<li><h5>Reviews</h5></li>
+
+{% for post in site.categories.Reviews limit:2 %}
+<ul>
+<li>
+<a href="{{post.url | prepend: site.github.url}}">{{post.title}}</a>
+</li>
+</ul>
+{% endfor %}
+
+<li><h5>Warehouse</h5></li>
+{% for post in site.categories.Warehouse limit:2 %}
+<ul>
+<li>
+<a href="{{post.url | prepend: site.github.url}}">{{post.title}}</a>
+</li>
+</ul>
+
+{% endfor %}
+</ol>

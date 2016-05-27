@@ -1,0 +1,3 @@
+markdown: redcarpet
+exclude: ['README.md']
+url: https://mutsinzi.github.io

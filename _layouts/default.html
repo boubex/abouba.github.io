@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tech-Plug</title>
+  <!-- Bootstrap Core CSS -->
+  <link rel="stylesheet" href="{{ "/css/bootstrap.min.css" | prepend: site.github.url }}">
+  <script src = "{{/js/bootstrap.min.js | prepend: site.github.url}}"></script>
+  <!-- Custom css -->
+  <link href = "{{site.github.url}}/css/style.css" rel="stylesheet">
+
+  <!-- font awesome css-->
+    <link href="{{site.github.url}}/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+  {% include nav.html %}
+</header>
+
+
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="content-container">
+
+    <div class="col-lg-2 col-md-3 col-sm-4 well">
+<div class="sidebar">
+  {% include recently-published.html %}
+</div>
+</div>
+
+<div class="col-lg-10 col-md-9 col-sm-8 main">
+
+{{content}}
+
+</div>
+
+</div>
+</div>
+
+
+
+</div>
+
+
+
+{% include footer.html %}
+
+
+<script src="{{site.github.url}}/js/bootstrap.min.js"></script>
+<script src="{{site.github.url}}/js/jquery.js"></script>
+</body>
+</html>
