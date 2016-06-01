@@ -46,7 +46,7 @@ padding-bottom:0;
 padding-right:0;
 padding:left:0;
 font-size: 20px;
-font-family: 'Lora', 'Times New Roman', serif;
+font-family: 'Ubuntu', 'Times New Roman', serif;
 }
 
 .container-fluid{
@@ -118,18 +118,22 @@ padding-top:10px;
 
 
 }
+.nav a:hover{
+  background-color: #000 !important;
+  color: #fff;
 
+
+}
 
 
 .nav a{
   text-decoration: none;
   padding: 5px;
-  margin-top: 20px;
-  background-color:#ff0000;
-  color: #000;
+  margin-top: 40px;
+  color: #ff0000;
   font-family: 'Ubuntu';
-  text-transform: uppercase;
-  font-size: 12px;
+  text-transform:;
+  font-size: 17px;
   font-weight: 800;
   letter-spacing: 1px;
 
@@ -282,6 +286,10 @@ footer .copyright{
 float:left;
 height:100px;
 width:100px;
-margin-left: 9px;
+margin-left: 50px;
 
+}
+
+.header{
+  color: #fff;
 }
