@@ -129,7 +129,7 @@ padding-top:10px;
 .nav a{
   text-decoration: none;
   padding: 5px;
-  margin-top: 40px;
+  margin-top: 10px;
   color: #ff0000;
   font-family: 'Ubuntu';
   text-transform:;
@@ -138,6 +138,10 @@ padding-top:10px;
   letter-spacing: 1px;
 
 
+}
+
+nav ul{
+  clear:both;
 }
 
 ul{
@@ -283,11 +287,17 @@ footer .copyright{
   color: #fff !important;
 }
 .navlogo {
-float:left;
-height:100px;
+height:80px;
 width:100px;
-margin-left: 50px;
+margin: 0 auto;
 
+
+
+
+}
+
+.navlogo:hover{
+  opacity:0.7;
 }
 
 .header{
