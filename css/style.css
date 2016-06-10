@@ -91,6 +91,7 @@ font-family: 'Ubuntu', 'Times New Roman', serif;
   font-size: 20px;
   color: #404040;
 
+
 }
 
 .current{
@@ -211,9 +212,10 @@ color:#fff;
 background-position: center;
   background-size: cover;
   height:500px ;
-  width:1000%;
+  width:10000px;
   background-repeat: no-repeat;
   padding-top: 150px;
+  border-radius: 5px;
 
 
 }
