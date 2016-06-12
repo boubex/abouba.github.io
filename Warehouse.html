@@ -1,10 +1,54 @@
----
-layout: default
----
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tech-Plug</title>
+  <!-- Bootstrap Core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+  <!-- Custom css -->
+  <link href = "/css/style.css" rel="stylesheet">
+
+  <!-- font awesome css-->
+    <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+  
+<nav>
+  <a  href="/index.html">
+  <img class="navlogo" src="/img/tech-plug.png">
+</a>
+  <ul class= "nav">
+    <li><a href="/index.html" class="">Home</a></li>
+    <li><a href="/News.html" class="">News</a></li>
+    <li><a href="/Reviews.html" class="">Reviews</a></li>
+    <li><a href="/Warehouse.html" class="current">Warehouse</a></li>
+  </ul>
+
+</nav>
+
+</header>
 
 
 
 
+<div class="container-fluid">
+  <div class="row">
+    <div class="content-container">
+
+
+
+<div class="col-lg-10 col-md-10 col-sm-10 main">
+
+<section class="text-center">
+<h1>COMING SOON</h1>
+<h3>Sorry for the inconvenience</h3>
+</section>
 
 
 <!-- edgeeeeeee-->
@@ -58,21 +102,98 @@ layout: default
 
 
 
-<h1> Warehouse </h1>
+
 <hr>
 
-<header class="img-responsive sign" style="background-color:#000">
-<div class="notice" style=
-'background-color:#ff0000; color:#000; width:40%; padding: 20px; margin-right:auto; margin-left:auto; border-radius: 2%' ><h1>COMING SOON</h1></div>
-<h3>Purchase recently reviewed products</h3>
 
-</header>
 
 <ul>
-  {% for post in site.categories.Warehouse limit:4 %}
-  <li>
-  <a href="{{ post.url | prepend: site.github.url }}">{{post.title}}</a>
-  <p>{{post.meta}}</p>
-  </li>
-  {% endfor %}
+  
 </ul>
+
+
+</div>
+
+<div class="col-lg-2 col-md-2 col-sm-2 well">
+<div class="sidebar">
+
+<h3 style="color:#ff0000">Recently Published</h3>
+<hr style="width: 50%; padding:0; margin:0">
+
+<ol class="criteria">
+<li><h5>News</h5></li>
+
+
+<li><h5>Reviews</h5></li>
+
+
+
+<li><h5>Warehouse</h5></li>
+
+</ol>
+
+</div>
+</div>
+
+</div>
+</div>
+
+
+
+</div>
+
+
+
+   <footer class="text-center">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-4">
+                        <h3>Location</h3>
+                        <p>Boulevard de l'Umuganda, Kacyiru<br>Lab, ICT Park, 6th Floor</p>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>Follow</h3>
+                        <ul class="list-inline">
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-dribbble"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>About Us</h3>
+                        <p>Committed to bringing you well curated tech stories and developments.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+                      <p class= "copyright text-muted text-center">  Copyright 2016 &copy; CITES</p>
+                    
+                        </footer>
+
+
+
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.js"></script>
+
+<script>
+$('.carousel').carousel({
+    interval: 5000 //changes the speed
+})
+</script>
+</body>
+</html>
