@@ -1,2 +1,1 @@
-# mutsinzi.github.io
-Profondeur is a review site for music, film and literature
+Tech Plug brings you the latest tech stories and developments
