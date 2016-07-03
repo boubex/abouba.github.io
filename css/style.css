@@ -22,6 +22,22 @@
   }
 }
 
+@media only screen and (max-width: 370px){
+  iframe{
+    width:inherit !important;
+  }
+}
+
+@media only screen and (max-width: 768px){
+  #jssor_1{
+    width:inherit !important;
+  }
+
+  .row{
+    padding: 0 !important;
+  }
+}
+
 @media only screen and (min-width:1200px){
   .site_name{
     font-size: 25px;
@@ -76,13 +92,13 @@ font-family: 'Ubuntu', 'Times New Roman', serif;
 
 .wrapper{
   margin:0;
-  padding:0;
+  padding:0 10%;
   margin-top: 2%;
   font-size: 20px;
 }
 
 .main{
-  padding:0 15%;
+  padding:0 5%;
 }
 
 .post-container{
@@ -393,6 +409,9 @@ margin: 0 auto;
   animation-name: fade;
   animation-duration: 1.5s;
 }
+
+
+
 
 @-webkit-keyframes fade {
   from {opacity: .4}
