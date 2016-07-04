@@ -2,7 +2,7 @@
 layout: posts
 author: Aboubakar
 title: Uber -  speeding up its expansion in Africa
-subtitle: 3D printing and much more
+subtitle: kenya,South Africa,Uganda,soon in Rwanda
 category: News
 image: uber.jpg
 source:
