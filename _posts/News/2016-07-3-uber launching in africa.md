@@ -4,7 +4,7 @@ author: Aboubakar
 title: Uber -  speeding up its expansion in Africa
 subtitle: kenya,South Africa,Uganda,soon in Rwanda
 category: News
-image: uber.jpg
+image: uber1.jpg
 source:
 ---
 
