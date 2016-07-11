@@ -12,311 +12,328 @@ Primary style
 
 -------------------------------- */
 
-html * {
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+*, *::after, *::before {
+	@include box-sizing(border-box);
 }
 
-*, *:after, *:before {
-	@include box-sizing(border-box);
+html {
+	font-size: 62.5%;
 }
 
 body {
 	font: {
-		size: 100%;
+		size: 1.6rem;
 		family: $primary-font; // variables inside partials > _variables.scss
 	}
-	color: $color-2;
+	color: $color-1;
 	background-color: $color-3;
 }
 
 a {
-	color: $color-1;
+	color: $color-2;
 	text-decoration: none;
 }
 
-img {
-	max-width: 100%;
-}
-
-
 /* -------------------------------- 
 
-Modules - reusable parts of our design
+Main Components 
 
 -------------------------------- */
 
-.cd-container { /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
+.cd-gallery {
 	width: 90%;
 	max-width: $L; // breakpoints inside partials > _layout.scss
-	margin: 0 auto;
-
-	&::after { /* clearfix */
-		content: '';
-		display: table;
-		clear: both;
-	}
-}
-
-.cd-img-replace {
-	/* replace text with background images */
-	display: inline-block;
-	overflow: hidden;
-	text-indent: 100%;
-	white-space: nowrap;
-}
-
-/* -------------------------------- 
-
-Main components 
-
--------------------------------- */
-
-header {
-	position: relative;
-	height: 200px;
-	line-height: 200px;
-	text-align: center;
-
-	h1 {
-		color: lighten($color-2, 30%);
-		@include font-size(26px);
-		font-weight: 300;
-	}
-
-	@include MQ(M) {
-		height: 250px;
-		line-height: 250px;
-
-		h1 {
-			@include font-size(30px);
-		}
-	}
-}
-
-#cd-gallery-items {
-	margin-top: 1.5em;
+	margin: 1.5em auto;
+	@include clearfix;
 
 	> li {
+		overflow: hidden;
 		position: relative;
-		margin-bottom: 6em;
+		margin-bottom: 2em;
+		background: $color-5;
+		border-radius: .25em;
+		box-shadow: 0 1px 4px rgba(#000, .1);
 
-		img {
-			width: 100%;
+		> a {
 			display: block;
-		}
+		}  
 	}
 
 	@include MQ(M) {
-		margin-top: 2em;
+		margin: 2em auto;
 
 		> li {
-			@include column(.48); // see how this mixin works inside partials > _layout.scss
+			@include column(.48); // see partials > _layout.scss
 			margin-right: 4%;
-			margin-bottom: 6.5em;
+			margin-bottom: 2.5em;
 
-			&:nth-child(2n) {
+			&:nth-of-type(2n) {
 				margin-right: 0;
 			}
 		}
 	}
 
 	@include MQ(L) {
-		margin-top: 2.5em;
+		margin: 2.5em auto;
 
 		> li {
-			@include column(.31);
-			margin-bottom: 7em;
-			margin-right: 3.5%;
-
-			&:nth-child(2n) {
-				margin-right: 3.5%;
+			
+			.no-touch &:hover .cd-dots li.selected a {
+				/* Slider dots - change background-color of the selected dot when hover over the its parent list item */
+				background: $color-1;
+				border-color: $color-1;
 			}
 
-			&:nth-child(3n) {
-				margin-right: 0;
+			.no-touch &:hover .cd-dots a {
+				/* Slider dots - change dot border-color when hover over the its parent list item */
+				border-color: lighten($color-1, 40%);
+			}
+
+			.no-touch &:hover li.move-right,
+			.no-touch &:hover li.move-left {
+				/* show preview items when hover over the its parent list item */
+				opacity: 0.3;
 			}
 		}
 	}
 }
 
 .cd-item-wrapper {
-	@include perspective(500px);
-	@include perspective-origin(50% -30%);
+	position: relative;
+	overflow: hidden;
+	margin: 3em 0;
 
 	li {
 		position: absolute;
 		top: 0;
-		left: 0;
-		/* Force Hardware Acceleration in WebKit */
-		@include transform(translate3d(0,0,0));
-		-webkit-backface-visibility: hidden;
-		backface-visibility: hidden;
-		@include transition(all .4s);
+		left: 25%;
+		height: 100%;
+		width: 50%;
+		opacity: 0;
 
-		&.cd-item-front {
+		/* Force Hardware Acceleration */
+		@include transform(translateZ(0));
+		@include backface-visibility(hidden);
+		will-change: transform, opacity;
+		
+		@include transform(translateX(200%) scale(0.7));
+		@include transition(transform .4s, opacity .4s);
+
+		&.selected {
+			/* selected item */
 			position: relative;
-			z-index: 3;
-			@include box-shadow;
+			opacity: 1;
+			@include transform(translateX(0) scale(1.3));
 		}
 
-		&.cd-item-middle {
-			z-index: 2;
-
-			.active & {
-				/* 3D effect on touch devices */
-				@include transform(translate3d(0,0,-20px));
-				opacity: .8;
-				@include box-shadow;
-			}
-		}
-
-		&.cd-item-back {
-			z-index: 1;
-
-			.active & {
-				/* 3D effect on touch devices */
-				@include transform(translate3d(0,0,-40px));
-				opacity: .4;
-				@include box-shadow;
-			}
-		}
-
-		&.cd-item-out {
-			/* picture not visible - use this class in case you have more than 3 pictures per item */
-			z-index: 0;
-			opacity: 0;
-			@include transform(translate3d(0,0,-60px));
+		&.move-left {
+			/* item on left - preview visible */
+			@include transform(translateX(-100%) scale(0.7));
+			opacity: 0.3;
 		}
 
 		&.move-right {
-			@include transform(translate3d(200px,0,0));
+			/* item on right - preview visible */
+			@include transform(translateX(100%) scale(0.7));
+			opacity: 0.3;
+		}
+
+		&.hide-left {
+			/* items hidden on the left */
+			@include transform(translateX(-200%) scale(0.7));
+		}
+
+		img {
+			display: block;
+			width: 100%;
+		}
+	}
+
+	@include MQ(L) {
+
+		li.move-left,
+		li.move-right {
+			/* hide preview items */
 			opacity: 0;
-			z-index: 4 !important;
 		}
 
-		&.hidden {
-			/* used to hide the picture once it's pushed out - to the right */
-			display: none !important;
+		li.focus-on-left {
+			/* class added to the .selected and .move-right items when user hovers over the .move-left item (item preview on the left) */
+			@include transform(translateX(3%) scale(1.25));
+
+
+			&.move-right {
+				@include transform(translateX(103%) scale(0.7));
+			}
 		}
 
-		.no-csstransitions &.cd-item-middle, .no-csstransitions &.cd-item-back {
-			/* 3D effect not visible on browsers that don't support transitions */
-			display: none;
+		li.focus-on-right {
+			/* class added to the .selected and .move-left items when user hovers over the .move-right item (item preview on the right) */
+			@include transform(translateX(-3%) scale(1.25));
+
+			&.move-left {
+				@include transform(translateX(-103%) scale(0.7));
+			}
+		}
+		
+		li.hover {
+			/* class added to the preview items (.move-left or .move-right) when user hovers over them */
+			opacity: 1 !important;
+
+			&.move-left {
+				@include transform(translateX(-97%) scale(0.75));
+			}
+
+			&.move-right {
+				@include transform(translateX(97%) scale(0.75));
+			}
+		}
+	}
+}
+
+.cd-dots {
+	/* not visible in the html document - created using jQuery */
+	position: absolute;
+	bottom: 95px;
+	@include center(x); // see partials > _mixins.scss
+	@include clearfix;
+	padding: .2em;
+
+	li {
+		display: inline-block;
+		float: left;
+		margin: 0 5px;
+		pointer-events: none;
+
+		&.selected a {
+			background: $color-1;
+			border-color: $color-1;
+		}
+	}
+
+	a {
+		display: block;
+		height: 6px;
+		width: 6px;
+		border-radius: 50%;
+		border: 1px solid lighten($color-1, 40%);
+
+		/* image replacement */
+		overflow: hidden;
+		text-indent: 100%;
+		white-space: nowrap;
+
+		@include transition(border-color .2s, background-color .2s);
+	}
+
+	@include MQ(L) {
+
+		li {
+			pointer-events: auto;
+
+			&.selected a {
+				background: darken($color-5, 20%);
+				border-color: darken($color-5, 20%);
+			}
+		}
+
+		a {
+			height: 8px;
+			width: 8px;
+			border-color: darken($color-5, 20%);
+			/* fix a bug in IE9/10 - transparent anchor not clickable */
+			background-color: rgba(#FFF, 0);
 		}
 	}
 }
 
 .cd-item-info {
-	position: absolute;
-	top: 100%;
-	left: 0;
-	width: 100%;
-	height: 70px;
-	line-height: 70px;
-	background-color: lighten($color-3, 10%);
-	padding: 0 1em;	
+	height: 90px;
+	line-height: 90px;
+	padding: 0 2em;	
 	@include clearfix;
-	box-shadow: 0 2px 3px rgba(#000, .2);
-	z-index: 5;
+
+	b, .cd-price, .cd-new-price {
+		font-weight: bold;
+		font-size: 2rem;
+	}
 
 	b {
 		float: left;
-		font-weight: bold;
 
 		a {
-			color: $color-2;
-
-			&:hover {
-				text-decoration: underline;
-			}
+			color: $color-1;
 		}
 	}
 
-	em {
+	.cd-price, .cd-new-price {
+		/* .cd-new-price not visible in the html document - created using jQuery */
 		float: right;
-		color: lighten($color-2, 30%);
 	}
-}
 
-.cd-item-navigation {
+	.cd-price {
+		color: $color-2;
+		position: relative;
+		margin-left: 10px;
+		@include transition(color .2s);
 
-	a {
-		position: absolute;
-		top: 50%;
-		@include transform(translateY(-50%));
-		width: 36px;
-		height: 66px;
-		background-color: rgba($color-3, .4);
-		background-image: url('../img/cd-icon-arrow.svg');
-		background-repeat: no-repeat;
-		background-position: center center;
-		z-index: 4;
-		display: none;
-		@include border-radius;
-
-		.no-touch &:hover {
-			background-color: rgba($color-3, .6);
+		&::after {
+			/* crossing line - visible if price is on sale */
+			content:'';
+			position: absolute;
+			@include center(y);
+			left: 0;
+			height: 2px;
+			width: 0%;
+			background-color: $color-2;
+			opacity: 0;
+			@include transition(width .2s 0s, opacity 0s .2s);
 		}
 
-		&.visible {
-			display: block;
-			@include animation(cd-fade-in .4s);
+		&.on-sale::after {
+			opacity: 1;
+			width: 100%;
+			@include transition(width .2s 0s, opacity 0s 0s);
 		}
 	}
 
-	li:nth-child(1) a {
-		left: 14px;
-		@include transform(translateY(-50%) rotate(180deg));
-	}
-
-	li:nth-child(2) a {
-		right: 14px;
-	}
-
-	.no-csstransitions & {
-		display: none;
-	}
-}
-
-@include keyframes(cd-fade-in) {
-	0% {
+	.cd-new-price {
+		/* new price - visible if price is on sale */
+		color: $color-4;
 		opacity: 0;
+		@include transform(translateX(5px));
+		@include transition(transform .2s, opacity .2s);
+
+		&.is-visible {
+			@include transform(translateX(0));
+			opacity: 1;
+		}
 	}
 
-	100% {
-		opacity: 1;
-	}
-}
-
-.cd-3d-trigger {
-	position: absolute;
-	bottom: 10px;
-	right: 10px;
-	width: 44px;
-	height: 44px;
-	background: url('../img/cd-icon-3d.svg') no-repeat center center;
-	z-index: 4;
-
-	.no-touch & {
-		display: none;
+	@include MQ(M) {
+		b, .cd-price, .cd-new-price {
+			font-size: 2.4rem;
+		}
 	}
 }
 
-.no-touch #cd-gallery-items > li:hover {
-	.cd-item-middle, .cd-item-back {
-		@include box-shadow;
-	}
+.no-js .move-right,
+.no-js .move-left {
+	display: none;
+}
 
-	.cd-item-middle {
-		/* 3D effect on no-touch devices */
-		@include transform(translate3d(0,0,-20px));
-		opacity: .8;
-	}
+/* -------------------------------- 
 
-	.cd-item-back {
-		/* 3D effect on no-touch devices */
-		@include transform(translate3d(0,0,-40px));
-		opacity: .4;
-	}
+xcredits 
+
+-------------------------------- */
+
+.credits {
+	width: 90%;
+	margin: 2em auto;
+	text-align: center;
+}
+
+.no-touch .credits a:hover {
+	text-decoration: underline;
 }
