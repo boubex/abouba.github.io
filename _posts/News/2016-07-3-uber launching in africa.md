@@ -8,6 +8,10 @@ image: uber1.jpg
 source:
 ---
 
+
+
+{% include share.html %}
+
 A rather quiet month in Africa once again dominated by two household Uber 
 
 Uber is speeding up its expansion in Africa after initially launching in South Africa, Kenya and Nigeria. June saw launches in Dar es Salaam, Accra and Kampala, signalling Uber’s first forays into Tanzania, Ghana and Uganda, while the taxi app also launches in a third Kenyan city – Thika.
