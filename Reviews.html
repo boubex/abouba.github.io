@@ -2,65 +2,18 @@
 layout: default
 ---
 
-
-
-
-
-
-
-
-
-<div class="wrapper-reviews">
-<h1 style ="font-family:'Ubuntu'; font-weight:800"> Latest reviews </h1>
+<h1> Reviews </h1>
 <hr>
-<div class="row">
-  <div class="col-sm-8 col-md-6">
-  <h1>samsung</h1>
-      
-        <iframe width="500" height="400"
-src="http://www.youtube.com/embed/XGSy3_Czz8k?autoplay=0">
-</iframe>
-        
-  </div>
 
-<div class="col-sm-8 col-md-6">
-  <h1>iphone</h1>
-     
-        <iframe width="500" height="400"
-src="http://www.youtube.com/embed/XGSy3_Czz8k?autoplay=0">
-</iframe>
-    
-  </div>
+<header class="img-responsive sign" style="background-color:#000">
+<div class="notice" style=
+"background-color:#ff0000; color:#000; width:40%; padding: 20px; margin-right:auto; margin-left:auto; border-radius: 2%" ><h1>COMING SOON</h1></div>
+<h3>Review of the latest tech gadjets & Accessories</h3>
 
-<div class="col-sm-8 col-md-6">
-  <h1>nexus</h1>  
-        <iframe width="500" height="400"
-src="http://www.youtube.com/embed/XGSy3_Czz8k?autoplay=0">
-</iframe>
-
-  </div>
-
-  <div class="col-sm-8 col-md-6">
-
-  <h1>ne ones</h1>
-  
-      
-        <iframe width="500" height="400"
-src="http://www.youtube.com/embed/XGSy3_Czz8k?autoplay=0">
-</iframe>
-
-        
-  </div>
-  </div>
-  </div>
-
-
-
-
-</div>
+</header>
 
 <ul>
-  {% for post in site.categories.Reviews. limit:4 %}
+  {% for post in site.categories.Reviews limit:4 %}
   <li>
   <a href="{{ post.url | prepend: site.github.url }}">{{post.title}}</a>
   <p>{{post.meta}}</p>

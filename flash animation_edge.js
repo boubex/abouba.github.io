@@ -30,13 +30,13 @@
                         {
                             id: 'FLASH_6',
                             type: 'image',
-                            rect: ['21.6%', '19.4%', '59.5%', '78.7%', 'auto', 'auto'],
+                            rect: ['119px', '41px', '327px', '166px', 'auto', 'auto'],
                             fill: ["rgba(0,0,0,0)",im+"FLASH%206.jpg",'0px','0px']
                         },
                         {
                             id: 'Text',
                             type: 'text',
-                            rect: ['1.8%', '3.8%', 'auto', 'auto', 'auto', 'auto'],
+                            rect: ['81px', '10px', 'auto', 'auto', 'auto', 'auto'],
                             text: "<p style=\"margin: 0px;\">​door step delivery with flash express</p>",
                             font: ['abel, sans-serif', [24, ""], "rgba(0,0,0,1)", "normal", "none", "italic", "break-word", "nowrap"],
                             textStyle: ["", "", "", "", "uppercase"]
@@ -44,7 +44,7 @@
                         {
                             id: 'Text2',
                             type: 'text',
-                            rect: ['43.3%', '28.4%', 'auto', 'auto', 'auto', 'auto'],
+                            rect: ['-62px', '60px', 'auto', 'auto', 'auto', 'auto'],
                             text: "<p style=\"margin: 0px;\">​24/7</p>",
                             align: "left",
                             font: ['abel, sans-serif', [24, "px"], "rgba(0,0,0,1)", "400", "none", "italic", "break-word", "nowrap"],
@@ -54,8 +54,7 @@
                     style: {
                         '${Stage}': {
                             isStage: true,
-                            rect: ['null', 'null', '100%', '211px', 'auto', 'auto'],
-                            sizeRange: ['','550px','',''],
+                            rect: ['null', 'null', '550px', '211px', 'auto', 'auto'],
                             overflow: 'hidden',
                             fill: ["rgba(255,255,255,1)"]
                         }
@@ -72,8 +71,8 @@
                             629,
                             "swing",
                             "${Text}",
-                            '101.27%',
-                            '1.82%'
+                            '557px',
+                            '81px'
                         ],
                         [
                             "eid16",
@@ -82,8 +81,8 @@
                             0,
                             "swing",
                             "${Text2}",
-                            '28.44%',
-                            '28.44%'
+                            '60px',
+                            '60px'
                         ],
                         [
                             "eid4",
@@ -92,8 +91,8 @@
                             314,
                             "swing",
                             "${FLASH_6}",
-                            '21.64%',
-                            '23.45%'
+                            '119px',
+                            '129px'
                         ],
                         [
                             "eid21",
@@ -102,38 +101,18 @@
                             628,
                             "swing",
                             "${FLASH_6}",
-                            '23.45%',
-                            '23.64%'
+                            '129px',
+                            '130px'
                         ],
                         [
-                            "eid22",
+                            "eid15",
                             "top",
                             1887,
                             0,
-                            "linear",
+                            "swing",
                             "${Text}",
-                            '3.94%',
-                            '3.94%'
-                        ],
-                        [
-                            "eid8",
-                            "left",
-                            629,
-                            629,
-                            "swing",
-                            "${Text2}",
-                            '-11.27%',
-                            '43.27%'
-                        ],
-                        [
-                            "eid12",
-                            "left",
-                            1887,
-                            0,
-                            "swing",
-                            "${Text2}",
-                            '43.27%',
-                            '43.27%'
+                            '10px',
+                            '10px'
                         ],
                         [
                             "eid2",
@@ -142,8 +121,8 @@
                             314,
                             "swing",
                             "${FLASH_6}",
-                            '207.11%',
-                            '59.24%'
+                            '437px',
+                            '125px'
                         ],
                         [
                             "eid19",
@@ -152,8 +131,28 @@
                             628,
                             "swing",
                             "${FLASH_6}",
-                            '59.24%',
-                            '19.43%'
+                            '125px',
+                            '41px'
+                        ],
+                        [
+                            "eid8",
+                            "left",
+                            629,
+                            629,
+                            "swing",
+                            "${Text2}",
+                            '-62px',
+                            '238px'
+                        ],
+                        [
+                            "eid12",
+                            "left",
+                            1887,
+                            0,
+                            "swing",
+                            "${Text2}",
+                            '238px',
+                            '238px'
                         ]
                     ]
                 }

@@ -1,25 +1,79 @@
 ---
 layout: default
 ---
-  <!-- SHOPROCKET SR-BLOCK START -->
-  <div class="sr-block sr-default" sr-meta="" sr-show-max="99" style="visibility: hidden;">
-      <div class="sr-item sr-buy-widget sr-small">
-          <div class="sr-image-holder">
-              <img src="[IMAGESRC]/convert?w=460&h=460&fit=max&quality=100" class="sr-image" title="[NAME]" alt="[NAME]"/>
-          </div>
-          <div class="sr-product-details">
-              <div class="sr-name">[NAME]</div>
-              <div class="sr-strapline">[STRAPLINE] </div>
-              <div class="sr-price">[CURRENCY][PRICE]</div>           
-              <a class="sr-add-link" href="[ADDTOCART]" type="button">
-                <div class="sr-add"><i class="fa fa-shopping-cart"></i> Buy Now</div>
-              </a>
-          </div>                              
-      </div>
-  </div>
-  <!-- SHOPROCKET END -->  
 
 
 
 
 
+
+<!-- edgeeeeeee-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+	<title>Untitled</title>
+<!--Adobe Edge Runtime-->
+
+    <script type="text/javascript" charset="utf-8" src="edge_includes/edge.6.0.0.min.js"></script>
+    <style>
+        .edgeLoad-EDGE-28153149 { visibility:hidden; }
+    </style>
+<script>
+   AdobeEdge.loadComposition('flash%20animation', 'EDGE-28153149', {
+    scaleToFit: "none",
+    centerStage: "none",
+    minW: "0px",
+    maxW: "undefined",
+    width: "550px",
+    height: "211px"
+}, {dom: [ ]}, {dom: [ ]});
+</script>
+<!--Adobe Edge Runtime End-->
+
+</head>
+<body style="margin:0;padding:0;">
+	<div id="Stage" class="EDGE-28153149">
+	</div>
+</body>
+</html>
+
+
+<!-- end of edge -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1> Warehouse </h1>
+<hr>
+
+<header class="img-responsive sign" style="background-color:#000">
+<div class="notice" style=
+'background-color:#ff0000; color:#000; width:40%; padding: 20px; margin-right:auto; margin-left:auto; border-radius: 2%' ><h1>COMING SOON</h1></div>
+<h3>Purchase recently reviewed products</h3>
+
+</header>
+
+<ul>
+  {% for post in site.categories.Warehouse limit:4 %}
+  <li>
+  <a href="{{ post.url | prepend: site.github.url }}">{{post.title}}</a>
+  <p>{{post.meta}}</p>
+  </li>
+  {% endfor %}
+</ul>

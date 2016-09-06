@@ -7,9 +7,6 @@ category: News
 image: lenovo.jpg
 source:
 ---
-
-{% include share.html %}
-
 it wouldn't be a tech conference without a ridiculous wearable prototype. At Lenovo's Tech World in San Francisco today, the company brought out a smart running shoe made in collaboration with outsole maker Vibram. It runs on an Intel Curie wearable chip and performs most of your standard fitness tracker functions. (No heart rate monitor.)
 
 The partnership has been in the works for more than a year, but the gadget is now a fully finished prototype. As just a proof-of-concept, the shoe isn't really anything a consumer can expect to find in stores any time soon. But it is a step in the right direction, toward wearables that offer the benefits of a fitness tracker while retaining the modest aesthetic of a standard pair of sneakers.
